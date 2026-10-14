@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="description" content="A simple offline-first banking exam study tracker.">
+  <title>Banking Study Hub</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Banking Study Hub home"><span class="brand-mark">B</span><span><b>Study Hub</b><small>Banking Exam Prep</small></span></a>
+      <nav id="nav" aria-label="Main navigation">
+        <button class="nav-item active" data-page="dashboard">▦ <span>Dashboard</span></button>
+        <button class="nav-item" data-page="tasks">☑ <span>Daily Tasks</span></button>
+        <button class="nav-item" data-page="timer">◷ <span>Study Timer</span></button>
+        <button class="nav-item" data-page="streaks">▦ <span>Streak Calendar</span></button>
+        <button class="nav-item" data-page="mocks">▤ <span>Mock Tests</span></button>
+        <button class="nav-item" data-page="revision">↻ <span>Revision</span></button>
+        <button class="nav-item" data-page="reports">▥ <span>Reports</span></button>
+        <button class="nav-item" data-page="settings">⚙ <span>Settings</span></button>
+      </nav>
+      <div class="sidebar-foot"><span class="status-dot"></span> Saved on this device</div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow" id="today-label">YOUR STUDY SPACE</div><h1 id="page-title">Dashboard</h1></div>
+        <div class="top-actions"><span id="header-name" class="user-chip">Aspirant</span><button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">☾</button></div>
+      </header>
+      <section id="page-content" aria-live="polite"></section>
+    </main>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <button class="active" data-page="dashboard">▦<small>Home</small></button><button data-page="tasks">☑<small>Tasks</small></button><button data-page="timer">◷<small>Timer</small></button><button data-page="streaks">▦<small>Streaks</small></button><button data-page="settings">⚙<small>More</small></button>
+  </nav>
+  <dialog id="modal"><form method="dialog" id="modal-form"><div id="modal-content"></div><div class="modal-actions"><button class="btn secondary" type="button" id="modal-cancel">Cancel</button><button class="btn primary" id="modal-save" value="default">Save</button></div></form></dialog>
+  <div id="toast" role="status" class="toast"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
